@@ -5,12 +5,12 @@ from flask import Flask, app, render_template
 
 app = Flask(__name__)
 
+
 @app.route('/states_list', strict_slashes=False)
 def state_list():
     """states list"""
     res = []
     storage.reload()
-
 
     for v in storage.all("States").values():
         res.append([v.id, v.name])
