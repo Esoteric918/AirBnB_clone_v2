@@ -15,14 +15,14 @@ class State(BaseModel, Base):
     """ State class """
     __tablename__ = 'states'
     name = Column(String(128), nullable=False)
-    if getenv('HBNB_MYSQL_DB') == 'db':
+    if getenv('HBNB_TYPE_STORAGE') == 'db':
         cities = relationship('City', cascade="all", backref="State")
     else:
         @property
         def cities(self):
             """returns city list instead"""
             res = []
-            for i in storage.all(City).values():
-                if i.state_id == self.id:
-                    res.append(i)
+            for city  in storage.all(City).values():
+                if city.state_id == self.id:
+                    res.append(city)
             return res
