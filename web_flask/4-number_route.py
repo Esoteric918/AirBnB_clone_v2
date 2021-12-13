@@ -3,7 +3,7 @@
 from flask import Flask
 
 app = Flask(__name__)
-
+app.url_map
 
 @app.route('/', strict_slashes=False)
 def hello():
@@ -33,7 +33,7 @@ def python_route(text="is cool"):
 @app.route('/number/<int>:n', strict_slashes=False)
 def number(n):
     if isinstance(n, int):
-        return "{} is a number".format(n)
+        return "{} is a number".format(n, int)
 
 
 if __name__ == "__main__":
