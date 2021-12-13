@@ -3,6 +3,7 @@
 from models.base_model import BaseModel, Base
 from sqlalchemy import Column, String, ForeignKey, Table, Float, Integer
 
+
 class Place(BaseModel, Base):
     """ A place to stay """
     __tablename__ = 'places'

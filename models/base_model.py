@@ -18,10 +18,9 @@ class BaseModel:
     # class attribute id, class attribute created_at,
     # class attribute updated_at
     # test needed ?
-    id = Column(String(60),nullable=False, primary_key=True)
-    created_at = Column(DateTime,nullable=False, default=datetime.utcnow())
+    id = Column(String(60), nullable=False, primary_key=True)
+    created_at = Column(DateTime, nullable=False, default=datetime.utcnow())
     updated_at = Column(DateTime, nullable=False, default=datetime.utcnow())
-
 
     def __init__(self, *args, **kwargs):
         """Instatntiates a new model"""
@@ -51,8 +50,10 @@ class BaseModel:
         self.updated_at = datetime.now()
         storage.new(self)
         storage.save()
+
 # Update the to_dict() method of the class BaseModel:
 # update test for to_dict needed
+
     def to_dict(self):
         """Convert instance into dict format"""
         dictionary = {}
