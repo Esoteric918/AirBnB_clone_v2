@@ -5,11 +5,12 @@ from models.base_model import BaseModel, Base
 from sqlalchemy.orm import relationship
 from sqlalchemy import Column, String
 from models.city import City
-from models import storage
+import models
 
 # test needed
 # add __tablename__ and link to DBStorage
 # update state task 6
+
 
 class State(BaseModel, Base):
     """ State class """
@@ -22,7 +23,7 @@ class State(BaseModel, Base):
         def cities(self):
             """returns city list instead"""
             res = []
-            for city  in storage.all(City).values():
+            for city in models.storage.all(City).values():
                 if city.state_id == self.id:
                     res.append(city)
             return res
