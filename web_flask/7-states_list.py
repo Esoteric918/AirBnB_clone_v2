@@ -7,11 +7,12 @@ from models.state import State
 app = Flask(__name__)
 app.url_map.strict_slashes = False
 
+
 @app.route('/states_list')
 def state_list():
     """states list"""
     state = storage.all(State)
-    return render_template("7-states_list.html", Satate=state)
+    return render_template("7-states_list.html", State=state)
 
 
 @app.teardown_appcontext
