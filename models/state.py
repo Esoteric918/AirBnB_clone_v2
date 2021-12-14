@@ -23,7 +23,7 @@ class State(BaseModel, Base):
         def cities(self):
             """returns city list instead"""
             res = []
-            for city in models.storage.all(City).values():
-                if city.state_id == self.id:
-                    res.append(city)
+            for thing in models.storage.all(City).values():
+                if thing.state_id == self.id:
+                    res.append(thing)
             return res
