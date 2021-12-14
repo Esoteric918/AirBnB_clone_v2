@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 """Start Flask app"""
+
+
 from models import storage
-from flask import Flask, app, render_template
+from flask import Flask, render_template
 from models.state import State
 
 app = Flask(__name__)
@@ -11,7 +13,6 @@ app.url_map.strict_slashes = False
 @app.route('/states_list')
 def stateList():
     """states list"""
-    storage.reload()
     state = storage.all(State)
     return render_template("7-states_list.html", States=state)
 
