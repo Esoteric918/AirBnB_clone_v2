@@ -9,14 +9,15 @@ app.url_map.strict_slashes = False
 
 
 @app.route('/states_list')
-def state_list():
+def stateList():
     """states list"""
+    storage.reload()
     state = storage.all(State)
-    return render_template("7-states_list.html", State=state)
+    return render_template("7-states_list.html", States=state)
 
 
 @app.teardown_appcontext
-def teardown_db(exception):
+def teardown_db(context):
     """teardown"""
     storage.close()
 
