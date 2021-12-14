@@ -71,6 +71,6 @@ class FileStorage:
                     return
 
 
-def close(self):
-    """deserializing the JSON file to objects"""
-    self.reload()
+    def close(self):
+        """deserializing the JSON file to objects"""
+        self.reload()
