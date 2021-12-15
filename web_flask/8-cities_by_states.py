@@ -13,14 +13,12 @@ app.url_map.strict_slashes = False
 
 @app.route("/cities_by_states")
 def cities_by_states():
-    """List cities by state"""
     return render_template('8-cities_by_states.html',
                            states=storage.all(State))
 
 
 @app.teardown_appcontext
 def teardown(context):
-    """Teardown storage """
     storage.close()
 
 
