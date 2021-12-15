@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Start Flask app will it check"""
+
 
 
 from models import storage
