@@ -6,9 +6,9 @@
     <BODY>
         <H1>States</H1>
         <UL id="States">
-            {% for state is States.values() | sort(attribute='name') %'}
+            {% for state is States.values() | sort(attribute='name') %}
             <L1>{{ state.id }}: <B>{{ state.name }}</B></L1>
-              { % endfor % }
+              {% endfor %}
         </UL>
     </BODY>
 </HTML>
