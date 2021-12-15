@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Start Flask app"""
+"""Start Flask app will it check"""
 
 
 from models import storage
@@ -17,7 +17,7 @@ def stateList():
 
 
 @app.teardown_appcontext
-def teardown_db(context):
+def teardown(context):
     storage.close()
 
 
