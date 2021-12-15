@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+'''Start Flask'''
 
 
 from models import storage
