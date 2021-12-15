@@ -19,7 +19,7 @@ def states(id=None):
 
     if id:
         states = states.get('State.{}'.format(id))
-    return render_template('9-states.html', State.states)
+    return render_template('9-states.html', States=states)
 
 
 @app.teardown_appcontext
