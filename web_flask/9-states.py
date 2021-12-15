@@ -13,6 +13,7 @@ app.url_map.strict_slashes = False
 
 @app.route("/cities_by_states")
 def states(id=None):
+    """list of states"""
     storage.reload()
     states = storage.all(State)
 
@@ -23,6 +24,7 @@ def states(id=None):
 
 @app.teardown_appcontext
 def teardown(context):
+    """teardown"""
     storage.close()
 
 
