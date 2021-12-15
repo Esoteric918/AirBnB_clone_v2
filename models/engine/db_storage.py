@@ -20,8 +20,8 @@ from sqlalchemy import create_engine
 class DBStorage:
     """ SQL DB Storage"""
 # Private class attributes
-    __engine: None
-    __session: None
+    __engine = None
+    __session = None
 
     def __init__(self):
         """Initializes the DBStroage"""
