@@ -43,7 +43,6 @@ class FileStorage:
         from models.city import City
         from models.review import Review
         from models.amenity import Amenity
-        from models.amenity import Amenity
         from models.review import Review
 
         classes = {
@@ -70,6 +69,6 @@ class FileStorage:
                     del self.__objects[key]
                     return
 
-    def close(self):
-        """deserializing the JSON file to objects"""
-        self.reload()
+    # def close(self):
+        # """deserializing the JSON file to objects"""
+        # self.reload()
